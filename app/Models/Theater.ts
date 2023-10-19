@@ -3,6 +3,7 @@ import { BaseModel, HasMany, HasOne, ManyToMany, column, hasMany, hasOne, manyTo
 import Projector from './Projector'
 import Seat from './Seat'
 import Screening from './Screening'
+import Movie from './Movie'
 
 
 export default class Theater extends BaseModel {
@@ -31,7 +32,7 @@ export default class Theater extends BaseModel {
   })
   public seats: HasMany<typeof Seat>
 
-  @manyToMany(() => Screening, {
+  @manyToMany(() => Movie, {
     pivotTable: 'screenings', //Nombre tabla pivote
     pivotForeignKey: 'theater_id', //Nombre de la clave que está en esta entidad
     //pero en la tabla pivote
@@ -39,5 +40,5 @@ export default class Theater extends BaseModel {
     //que sirve de pivote en larelación
     pivotColumns: ['date'] //obtener datos de columnas adicionales
     })
-    public screenings: ManyToMany<typeof Screening>;
+    public movies: ManyToMany<typeof Movie>;
 }

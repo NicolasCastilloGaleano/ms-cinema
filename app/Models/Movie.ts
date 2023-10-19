@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon'
 import { BaseModel, ManyToMany, column, manyToMany } from '@ioc:Adonis/Lucid/Orm'
 import Screening from './Screening'
+import Theater from './Theater'
 
 export default class Movie extends BaseModel {
   @column({ isPrimary: true })
@@ -15,7 +16,7 @@ export default class Movie extends BaseModel {
   @column()
   public year:Date
 
-  @manyToMany(() => Screening, {
+  @manyToMany(() => Theater, {
     pivotTable: 'screenings', //Nombre tabla pivote
     pivotForeignKey: 'movie_id', //Nombre de la clave que está en esta entidad
     //pero en la tabla pivote
@@ -23,7 +24,7 @@ export default class Movie extends BaseModel {
     //que sirve de pivote en larelación
     pivotColumns: ['date'] //obtener datos de columnas adicionales
     })
-    public screenings: ManyToMany<typeof Screening>;
+    public theaters: ManyToMany<typeof Theater>;
     
 
   @column.dateTime({ autoCreate: true })
