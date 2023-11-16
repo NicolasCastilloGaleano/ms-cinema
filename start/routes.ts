@@ -19,37 +19,24 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import "./routes/movies"
+import "./routes/projectors"
+import "./routes/screenings"
+import "./routes/seats"
+import "./routes/theaters"
+
+
 
 Route.get('/', async () => {
   return { hello: 'world' }
 })
 
-Route.post("/movies","MoviesController.store");
-Route.get("/movies","MoviesController.index");
-Route.get("/movies/:id","MoviesController.show");
-Route.put("/movies/:id","MoviesController.update");
-Route.delete("/movies/:id","MoviesController.destroy");
 
-Route.post("/theaters","TheatersController.store");
-Route.get("/theaters","TheatersController.index");
-Route.get("/theaters/:id","TheatersController.show");
-// Route.put("/theaters/:id","TheatersController.update");
-// Route.delete("/theaters/:id","TheatersController.destroy");
 
-Route.post("/projectors","ProjectorsController.store");
-Route.get("/projectors","ProjectorsController.index");
-Route.get("/projectors/:id","ProjectorsController.show");
-// Route.put("/projectors/:id","ProjectorsController.update");
-// Route.delete("/projectors/:id","ProjectorsController.destroy");
 
-Route.post("/seats","SeatsController.store");
-Route.get("/seats","SeatsController.index");
-Route.get("/seats/:id","SeatsController.show");
-// Route.put("/seats/:id","SeatsController.update");
-// Route.delete("/seats/:id","SeatsController.destroy");
 
-Route.post("/screenings","ScreeningsController.store");
-Route.get("/screenings","ScreeningsController.index");
-Route.get("/screenings/:id","ScreeningsController.show");
-// Route.put("/screenings/:id","ScreeningsController.update");
-// Route.delete("/screenings/:id","ScreeningsController.destroy");
+
+
+
+
+
